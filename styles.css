@@ -1,0 +1,491 @@
+/* ============================================================
+   Дрогобич у Революції гідності
+   Світла, стримана, мінімалістична палітра
+   ============================================================ */
+
+:root {
+  --paper:      #FAF9F6;
+  --paper-alt:  #F2F0EA;
+  --ink:        #1A1A1A;
+  --ink-soft:   #4A4A47;
+  --ink-faint:  #8C8A83;
+  --line:       #E2DFD6;
+  --accent:     #3A5A78;
+  --accent-dark:#2C4660;
+
+  --maxw: 1080px;
+  --gutter: clamp(1.25rem, 5vw, 4rem);
+
+  --serif: "Lora", Georgia, "Times New Roman", serif;
+  --sans:  "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* ---------- Reset / base ---------- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 18px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { color: var(--accent-dark); text-decoration: underline; text-underline-offset: 3px; }
+
+p { margin: 0 0 1.1em; }
+p:last-child { margin-bottom: 0; }
+
+::selection { background: var(--accent); color: #fff; }
+
+/* ============================================================
+   Навігація
+   ============================================================ */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(250, 249, 246, 0.88);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0.9rem var(--gutter);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.nav__brand {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--ink);
+  letter-spacing: 0.02em;
+}
+.nav__brand:hover { text-decoration: none; color: var(--accent); }
+
+.nav__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1.6rem;
+  flex-wrap: wrap;
+}
+
+.nav__list a {
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  padding-bottom: 2px;
+  border-bottom: 1.5px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.nav__list a:hover { color: var(--ink); text-decoration: none; }
+.nav__list a.is-active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* hamburger */
+.nav__toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.nav__toggle span {
+  display: block;
+  height: 2px;
+  width: 24px;
+  background: var(--ink);
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+.nav__toggle.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav__toggle.is-open span:nth-child(2) { opacity: 0; }
+.nav__toggle.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ============================================================
+   Hero
+   ============================================================ */
+.hero {
+  padding: clamp(4.5rem, 14vw, 9rem) var(--gutter) clamp(3.5rem, 9vw, 6rem);
+  border-bottom: 1px solid var(--line);
+}
+.hero__inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+}
+.hero__eyebrow {
+  font-size: 0.85rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 1.4rem;
+  font-weight: 600;
+}
+.hero__title {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: clamp(2.6rem, 7vw, 4.6rem);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  margin: 0 0 1.6rem;
+}
+.hero__lead {
+  max-width: 38ch;
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  color: var(--ink-soft);
+  margin-bottom: 2.4rem;
+}
+.hero__cta {
+  display: inline-block;
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  color: var(--accent);
+  padding: 0.7rem 0;
+  border-bottom: 1.5px solid var(--accent);
+}
+.hero__cta:hover {
+  text-decoration: none;
+  color: var(--accent-dark);
+  border-bottom-color: var(--accent-dark);
+}
+
+/* ============================================================
+   Загальні секції
+   ============================================================ */
+.section {
+  padding: clamp(3.5rem, 9vw, 6.5rem) var(--gutter);
+}
+.section--alt { background: var(--paper-alt); }
+
+.section__inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+}
+.section__inner.narrow { max-width: 680px; }
+
+.section__label {
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 600;
+  margin: 0 0 0.9rem;
+}
+.section__title {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: clamp(1.9rem, 4.5vw, 2.9rem);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin: 0 0 1.6rem;
+}
+.section__intro {
+  max-width: 60ch;
+  color: var(--ink-soft);
+  font-size: 1.08rem;
+  margin-bottom: 2.8rem;
+}
+
+/* pullquote */
+.pullquote {
+  margin: 2.4rem 0 0;
+  padding: 0.2rem 0 0.2rem 1.6rem;
+  border-left: 3px solid var(--accent);
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  line-height: 1.4;
+  color: var(--ink);
+}
+
+/* ============================================================
+   Картки міста
+   ============================================================ */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+.card {
+  background: var(--paper);
+  padding: 2rem 1.8rem;
+}
+.section--alt .card { background: var(--paper-alt); }
+.card__title {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 0.7rem;
+}
+.card p {
+  color: var(--ink-soft);
+  font-size: 0.98rem;
+  margin: 0;
+}
+
+/* ============================================================
+   Хронологія
+   ============================================================ */
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 760px;
+  border-left: 2px solid var(--line);
+}
+.timeline__item {
+  position: relative;
+  padding: 0 0 2.2rem 2rem;
+}
+.timeline__item:last-child { padding-bottom: 0; }
+.timeline__item::before {
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: 0.45rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--paper);
+  border: 2px solid var(--ink-faint);
+}
+.timeline__item--mark::before {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.timeline__date {
+  display: block;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 0.35rem;
+}
+.timeline__item--mark .timeline__date { color: var(--accent-dark); }
+.timeline__text {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 1rem;
+}
+
+/* ============================================================
+   Картки героїв
+   ============================================================ */
+.heroes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 2rem;
+}
+.hero-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+}
+.section--alt .hero-card { background: var(--paper); }
+
+.hero-card__photo {
+  margin: 0;
+  aspect-ratio: 4 / 5;
+  background: var(--paper-alt);
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.hero-card__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero-card__photo-note {
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.6;
+  color: var(--ink-faint);
+}
+
+.hero-card__body { padding: 1.7rem 1.6rem 1.9rem; }
+.hero-card__name {
+  font-family: var(--serif);
+  font-size: 1.45rem;
+  font-weight: 600;
+  margin: 0 0 0.35rem;
+}
+.hero-card__years {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--ink);
+  margin: 0 0 0.3rem;
+}
+.hero-card__role {
+  font-size: 0.83rem;
+  letter-spacing: 0.02em;
+  color: var(--ink-faint);
+  margin: 0 0 1.2rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid var(--line);
+}
+.hero-card__body p:not(.hero-card__years):not(.hero-card__role):not(.hero-card__honor) {
+  font-size: 0.96rem;
+  color: var(--ink-soft);
+}
+.hero-card__honor {
+  margin: 1.3rem 0 0;
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* ============================================================
+   Пам'ять
+   ============================================================ */
+.memory__honor {
+  margin-top: 2.2rem;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.3rem, 3vw, 1.7rem);
+  color: var(--accent);
+}
+
+/* ============================================================
+   Джерела
+   ============================================================ */
+.sources {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+.sources li { border-bottom: 1px solid var(--line); }
+.sources a {
+  display: block;
+  padding: 1rem 0;
+  color: var(--ink);
+  font-size: 1rem;
+  font-weight: 500;
+}
+.sources a:hover { color: var(--accent); text-decoration: none; padding-left: 0.4rem; transition: padding 0.2s ease; }
+
+/* ============================================================
+   Footer
+   ============================================================ */
+.footer {
+  background: var(--ink);
+  color: #E8E6E0;
+  padding: clamp(3rem, 7vw, 4.5rem) var(--gutter);
+}
+.footer__inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  text-align: center;
+}
+.footer__slogan {
+  font-family: var(--serif);
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  margin: 0 0 0.8rem;
+}
+.footer__note {
+  color: #A7A49C;
+  font-size: 0.95rem;
+  max-width: 44ch;
+  margin: 0 auto 1.6rem;
+}
+.footer__top {
+  color: #E8E6E0;
+  font-size: 0.88rem;
+  letter-spacing: 0.04em;
+  border-bottom: 1px solid #555;
+  padding-bottom: 2px;
+}
+.footer__top:hover { color: #fff; text-decoration: none; border-bottom-color: #fff; }
+
+/* ============================================================
+   Анімація появи
+   ============================================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ============================================================
+   Адаптивність
+   ============================================================ */
+@media (max-width: 720px) {
+  body { font-size: 17px; }
+
+  .nav__toggle { display: flex; }
+
+  .nav__list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
+    padding: 0.5rem var(--gutter) 1.2rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  .nav__list.is-open { max-height: 420px; }
+  .nav__list li { width: 100%; }
+  .nav__list a {
+    display: block;
+    padding: 0.75rem 0;
+    border-bottom: none;
+    border-top: 1px solid var(--line);
+    font-size: 1rem;
+  }
+  .nav__list li:first-child a { border-top: none; }
+}
+
+/* Повага до налаштувань доступності */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { transition: none; opacity: 1; transform: none; }
+  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}
