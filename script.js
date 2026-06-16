@@ -63,6 +63,36 @@
     })
     .filter(Boolean);
 
+  /* ---------- Кнопка «Нагору» ---------- */
+  var toTopEls = document.querySelectorAll(".js-to-top");
+  var floatBtn = document.querySelector(".to-top");
+
+  function scrollToTop(e) {
+    if (e) e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+  toTopEls.forEach(function (el) {
+    el.addEventListener("click", scrollToTop);
+  });
+
+  if (floatBtn) {
+    var toggleFloat = function () {
+      floatBtn.classList.toggle("is-visible", window.pageYOffset > 600);
+    };
+    toggleFloat();
+    window.addEventListener("scroll", toggleFloat, { passive: true });
+  }
+
+  /* ---------- Лише одне відео одночасно ---------- */
+  var videos = Array.prototype.slice.call(document.querySelectorAll(".video video"));
+  videos.forEach(function (vid) {
+    vid.addEventListener("play", function () {
+      videos.forEach(function (other) {
+        if (other !== vid) other.pause();
+      });
+    });
+  });
+
   if ("IntersectionObserver" in window && sections.length) {
     var spy = new IntersectionObserver(
       function (entries) {

@@ -20,10 +20,13 @@
         <span></span><span></span><span></span>
       </button>
       <ul class="nav__list">
-        <li><a href="#intro">Революція гідності</a></li>
+        <li><a href="#intro">Революція</a></li>
         <li><a href="#city">Місто на Майдані</a></li>
+        <li><a href="#documents">Документальні</a></li>
         <li><a href="#timeline">Хронологія</a></li>
         <li><a href="#heroes">Герої</a></li>
+        <li><a href="#testimony">Свідчення</a></li>
+        <li><a href="#gallery">Фотографії</a></li>
         <li><a href="#memory">Пам'ять</a></li>
         <li><a href="#sources">Джерела</a></li>
       </ul>
@@ -44,10 +47,101 @@
         </p>
         <a href="#heroes" class="hero__cta">Згадати поіменно</a>
       </div>
+
+      <!-- Меморіальний ряд: троє героїв -->
+      <div class="hero__heroes" aria-label="Троє земляків — Герої Небесної Сотні">
+        <figure class="hero__hero">
+          <img src="assets/heroes/vaida.jpg" alt="Богдан Вайда" loading="lazy">
+          <figcaption>Богдан Вайда</figcaption>
+        </figure>
+        <figure class="hero__hero">
+          <img src="assets/heroes/shyling.jpg" alt="Йосип Шилінг" loading="lazy">
+          <figcaption>Йосип Шилінг</figcaption>
+        </figure>
+        <figure class="hero__hero">
+          <img src="assets/heroes/ushnevych.jpg" alt="Олег Ушневич" loading="lazy">
+          <figcaption>Олег Ушневич</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ───────────────── Розділи сайту (огляд) ───────────────── -->
+    <section class="section overview" aria-labelledby="overview-title">
+      <div class="section__inner">
+        <p class="section__label">Зміст</p>
+        <h2 class="section__title" id="overview-title">Розділи сайту</h2>
+
+        <div class="overview__grid">
+
+          <a class="ov-card ov-card--photo" href="#intro"
+             style="background-image:url('assets/docs/d07.jpg')">
+            <span class="ov-card__num">01</span>
+            <span class="ov-card__title">Революція гідності</span>
+            <span class="ov-card__text">Що це було і чому почалося</span>
+          </a>
+
+          <a class="ov-card ov-card--photo" href="#city"
+             style="background-image:url('assets/docs/d12.jpg')">
+            <span class="ov-card__num">02</span>
+            <span class="ov-card__title">Дрогобич на Майдані</span>
+            <span class="ov-card__text">Участь міста у протестах</span>
+          </a>
+
+          <a class="ov-card ov-card--photo" href="#documents"
+             style="background-image:url('assets/docs/d11.jpg')">
+            <span class="ov-card__num">03</span>
+            <span class="ov-card__title">Документальні свідчення</span>
+            <span class="ov-card__text">Фото Дрогобича 2013–2014</span>
+          </a>
+
+          <a class="ov-card ov-card--photo" href="#timeline"
+             style="background-image:url('assets/docs/d03.jpg')">
+            <span class="ov-card__num">04</span>
+            <span class="ov-card__title">Хронологія</span>
+            <span class="ov-card__text">Як розгорталися події</span>
+          </a>
+
+          <a class="ov-card ov-card--photo" href="#heroes"
+             style="background-image:url('assets/heroes/ushnevych.jpg')">
+            <span class="ov-card__num">05</span>
+            <span class="ov-card__title">Герої</span>
+            <span class="ov-card__text">Троє земляків Небесної Сотні</span>
+          </a>
+
+          <a class="ov-card ov-card--photo" href="#testimony"
+             style="background-image:url('assets/docs/d05.jpg')">
+            <span class="ov-card__num">06</span>
+            <span class="ov-card__title">Свідчення учасників</span>
+            <span class="ov-card__text">Відео-розповіді очевидців</span>
+          </a>
+
+          <a class="ov-card ov-card--photo" href="#gallery"
+             style="background-image:url('assets/museum/m02.jpg')">
+            <span class="ov-card__num">07</span>
+            <span class="ov-card__title">Фотографії</span>
+            <span class="ov-card__text">Музей Героїв Небесної Сотні</span>
+          </a>
+
+          <a class="ov-card ov-card--photo" href="#memory"
+             style="background-image:url('assets/museum/m08.jpg')">
+            <span class="ov-card__num">08</span>
+            <span class="ov-card__title">Пам'ять</span>
+            <span class="ov-card__text">Як місто вшановує загиблих</span>
+          </a>
+
+          <a class="ov-card ov-card--photo" href="#sources"
+             style="background-image:url('assets/museum/m20.jpg')">
+            <span class="ov-card__num">09</span>
+            <span class="ov-card__title">Джерела</span>
+            <span class="ov-card__text">Звідки взято факти</span>
+          </a>
+
+        </div>
+      </div>
     </section>
 
     <!-- ───────────────── Вступ ───────────────── -->
-    <section class="section" id="intro" aria-labelledby="intro-title">
+    <section class="section section--alt" id="intro" aria-labelledby="intro-title">
       <div class="section__inner narrow">
         <p class="section__label">01 — Що це було</p>
         <h2 class="section__title" id="intro-title">Революція гідності</h2>
@@ -70,7 +164,7 @@
     </section>
 
     <!-- ───────────────── Дрогобич на Майдані ───────────────── -->
-    <section class="section section--alt" id="city" aria-labelledby="city-title">
+    <section class="section" id="city" aria-labelledby="city-title">
       <div class="section__inner">
         <p class="section__label">02 — Участь міста</p>
         <h2 class="section__title" id="city-title">Дрогобич на Майдані</h2>
@@ -120,10 +214,36 @@
       </div>
     </section>
 
+    <!-- ───────────────── Документальні свідчення ───────────────── -->
+    <section class="section section--alt" id="documents" aria-labelledby="documents-title">
+      <div class="section__inner">
+        <p class="section__label">03 — Дрогобич 2013–2014</p>
+        <h2 class="section__title" id="documents-title">Документальні свідчення</h2>
+        <p class="section__intro">
+          Світлини з дрогобицьких площ часів Революції гідності. Мітинги «за Європу»,
+          студентські колони, родини з дітьми та море синьо-жовтих прапорів — місто
+          щодня виходило на вулиці.
+        </p>
+
+        <div class="gallery gallery--docs">
+          <a class="gallery__item" href="assets/docs/d12.jpg" target="_blank" rel="noopener"><img src="assets/docs/d12.jpg" alt="Мітинг у Дрогобичі з українськими прапорами біля міської ради" loading="lazy"></a>
+          <a class="gallery__item" href="assets/docs/d07.jpg" target="_blank" rel="noopener"><img src="assets/docs/d07.jpg" alt="Студенти Дрогобича з плакатами «Студенти за Європу»" loading="lazy"></a>
+          <a class="gallery__item" href="assets/docs/d03.jpg" target="_blank" rel="noopener"><img src="assets/docs/d03.jpg" alt="Вечірня акція на площі Дрогобича" loading="lazy"></a>
+          <a class="gallery__item" href="assets/docs/d04.jpg" target="_blank" rel="noopener"><img src="assets/docs/d04.jpg" alt="Учасники Євромайдану в Дрогобичі" loading="lazy"></a>
+          <a class="gallery__item" href="assets/docs/d05.jpg" target="_blank" rel="noopener"><img src="assets/docs/d05.jpg" alt="Дрогобичани на акції протесту" loading="lazy"></a>
+          <a class="gallery__item" href="assets/docs/d06.jpg" target="_blank" rel="noopener"><img src="assets/docs/d06.jpg" alt="Мітинг на підтримку євроінтеграції в Дрогобичі" loading="lazy"></a>
+          <a class="gallery__item" href="assets/docs/d08.jpg" target="_blank" rel="noopener"><img src="assets/docs/d08.jpg" alt="Протестувальники з прапорами в Дрогобичі" loading="lazy"></a>
+          <a class="gallery__item" href="assets/docs/d09.jpg" target="_blank" rel="noopener"><img src="assets/docs/d09.jpg" alt="Громада Дрогобича на Майдані" loading="lazy"></a>
+          <a class="gallery__item" href="assets/docs/d10.jpg" target="_blank" rel="noopener"><img src="assets/docs/d10.jpg" alt="Акція у центрі Дрогобича 2013–2014" loading="lazy"></a>
+          <a class="gallery__item" href="assets/docs/d11.jpg" target="_blank" rel="noopener"><img src="assets/docs/d11.jpg" alt="Дрогобичани підтримують Революцію гідності" loading="lazy"></a>
+        </div>
+      </div>
+    </section>
+
     <!-- ───────────────── Хронологія ───────────────── -->
     <section class="section" id="timeline" aria-labelledby="timeline-title">
       <div class="section__inner">
-        <p class="section__label">03 — Як це було</p>
+        <p class="section__label">04 — Як це було</p>
         <h2 class="section__title" id="timeline-title">Хронологія</h2>
 
         <ol class="timeline">
@@ -166,7 +286,7 @@
     <!-- ───────────────── Герої ───────────────── -->
     <section class="section section--alt" id="heroes" aria-labelledby="heroes-title">
       <div class="section__inner">
-        <p class="section__label">04 — Небесна Сотня</p>
+        <p class="section__label">05 — Небесна Сотня</p>
         <h2 class="section__title" id="heroes-title">Земляки, які не повернулися</h2>
         <p class="section__intro">
           Усі троє загинули в один день — 20 лютого 2014 року — від куль снайперів
@@ -178,8 +298,7 @@
           <!-- Богдан Вайда -->
           <article class="hero-card">
             <figure class="hero-card__photo">
-              <!-- замінити на <img src="bohdan-vaida.jpg" alt="Богдан Вайда"> -->
-              <span class="hero-card__photo-note">Фото<br>Богдан Вайда</span>
+              <img src="assets/heroes/vaida.jpg" alt="Богдан Вайда" loading="lazy">
             </figure>
             <div class="hero-card__body">
               <h3 class="hero-card__name">Богдан Вайда</h3>
@@ -202,13 +321,12 @@
           <!-- Йосип Шилінг -->
           <article class="hero-card">
             <figure class="hero-card__photo">
-              <!-- замінити на <img src="yosyp-shyling.jpg" alt="Йосип Шилінг"> -->
-              <span class="hero-card__photo-note">Фото<br>Йосип Шилінг</span>
+              <img src="assets/heroes/shyling.jpg" alt="Йосип Шилінг" loading="lazy">
             </figure>
             <div class="hero-card__body">
               <h3 class="hero-card__name">Йосип Шилінг</h3>
               <p class="hero-card__years">14.03.1952 — 20.02.2014</p>
-              <p class="hero-card__role">Учасник барикад · с. Воробльовичі, Дрогобицький р-н</p>
+              <p class="hero-card__role">Учасник барикад · с. Вороблевичі, Дрогобицький р-н</p>
               <p>
                 Електрик і будівельник, батько двох доньок. Належав до тих, для кого
                 боротьба за Україну тривала десятиліттями: учасник Української
@@ -217,7 +335,7 @@
               <p>
                 Неодноразово їздив на Майдан, а коли почалися розстріли — спеціально
                 записався на поїздку 18 лютого 2014 року. Загинув за два дні, у віці
-                61 року. Похований 23 лютого в рідних Воробльовичах.
+                61 року. Похований 23 лютого в рідних Вороблевичах.
               </p>
               <p class="hero-card__honor">Герой України (посмертно)</p>
             </div>
@@ -226,8 +344,7 @@
           <!-- Олег Ушневич -->
           <article class="hero-card">
             <figure class="hero-card__photo">
-              <!-- замінити на <img src="oleh-ushnevych.jpg" alt="Олег Ушневич"> -->
-              <span class="hero-card__photo-note">Фото<br>Олег Ушневич</span>
+              <img src="assets/heroes/ushnevych.jpg" alt="Олег Ушневич" loading="lazy">
             </figure>
             <div class="hero-card__body">
               <h3 class="hero-card__name">Олег Ушневич</h3>
@@ -250,10 +367,89 @@
       </div>
     </section>
 
+    <!-- ───────────────── Свідчення учасників ───────────────── -->
+    <section class="section" id="testimony" aria-labelledby="testimony-title">
+      <div class="section__inner">
+        <p class="section__label">06 — Голоси очевидців</p>
+        <h2 class="section__title" id="testimony-title">Свідчення учасників</h2>
+        <p class="section__intro">
+          Відео-спогади одного з учасників Революції гідності з Дрогобича — пряма
+          мова про події, у яких він брав участь особисто.
+        </p>
+
+        <div class="videos">
+          <figure class="video">
+            <video controls preload="metadata" playsinline>
+              <source src="assets/videos/svidchennia-1.mp4" type="video/mp4">
+              Ваш браузер не підтримує відтворення відео.
+            </video>
+            <figcaption>Свідчення учасника · частина 1</figcaption>
+          </figure>
+          <figure class="video">
+            <video controls preload="metadata" playsinline>
+              <source src="assets/videos/svidchennia-2.mp4" type="video/mp4">
+              Ваш браузер не підтримує відтворення відео.
+            </video>
+            <figcaption>Свідчення учасника · частина 2</figcaption>
+          </figure>
+          <figure class="video">
+            <video controls preload="metadata" playsinline>
+              <source src="assets/videos/svidchennia-3.mp4" type="video/mp4">
+              Ваш браузер не підтримує відтворення відео.
+            </video>
+            <figcaption>Свідчення учасника · частина 3</figcaption>
+          </figure>
+          <figure class="video">
+            <video controls preload="metadata" playsinline>
+              <source src="assets/videos/svidchennia-4.mp4" type="video/mp4">
+              Ваш браузер не підтримує відтворення відео.
+            </video>
+            <figcaption>Свідчення учасника · частина 4</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────────── Фотографії (музей) ───────────────── -->
+    <section class="section section--alt" id="gallery" aria-labelledby="gallery-title">
+      <div class="section__inner">
+        <p class="section__label">07 — Наш візит</p>
+        <h2 class="section__title" id="gallery-title">Фотографії</h2>
+        <p class="section__intro">
+          Світлини з музею Героїв Небесної Сотні — стенди з обличчями загиблих,
+          експозиція пам'яті та наша екскурсія до місця, де бережуть ці імена.
+        </p>
+
+        <div class="gallery">
+          <a class="gallery__item" href="assets/museum/m02.jpg" target="_blank" rel="noopener"><img src="assets/museum/m02.jpg" alt="Група біля стенду «Небесна Сотня» у музеї" loading="lazy"></a>
+          <a class="gallery__item" href="assets/museum/m08.jpg" target="_blank" rel="noopener"><img src="assets/museum/m08.jpg" alt="Експозиція пам'яті Героїв Небесної Сотні" loading="lazy"></a>
+          <a class="gallery__item" href="assets/museum/m03.jpg" target="_blank" rel="noopener"><img src="assets/museum/m03.jpg" alt="Музей Героїв Небесної Сотні — стенди" loading="lazy"></a>
+          <a class="gallery__item" href="assets/museum/m04.jpg" target="_blank" rel="noopener"><img src="assets/museum/m04.jpg" alt="Експозиція музею" loading="lazy"></a>
+          <a class="gallery__item" href="assets/museum/m05.jpg" target="_blank" rel="noopener"><img src="assets/museum/m05.jpg" alt="Стенди музею Небесної Сотні" loading="lazy"></a>
+          <a class="gallery__item" href="assets/museum/m06.jpg" target="_blank" rel="noopener"><img src="assets/museum/m06.jpg" alt="Експозиція пам'яті" loading="lazy"></a>
+          <a class="gallery__item" href="assets/museum/m07.jpg" target="_blank" rel="noopener"><img src="assets/museum/m07.jpg" alt="Музейна експозиція Революції гідності" loading="lazy"></a>
+          <a class="gallery__item" href="assets/museum/m09.jpg" target="_blank" rel="noopener"><img src="assets/museum/m09.jpg" alt="Стенд із портретами Героїв" loading="lazy"></a>
+          <a class="gallery__item" href="assets/museum/m10.jpg" target="_blank" rel="noopener"><img src="assets/museum/m10.jpg" alt="Музей Героїв Небесної Сотні" loading="lazy"></a>
+          <a class="gallery__item" href="assets/museum/m11.jpg" target="_blank" rel="noopener"><img src="assets/museum/m11.jpg" alt="Експозиція музею" loading="lazy"></a>
+          <a class="gallery__item" href="assets/museum/m12.jpg" target="_blank" rel="noopener"><img src="assets/museum/m12.jpg" alt="Музейні стенди" loading="lazy"></a>
+          <a class="gallery__item" href="assets/museum/m13.jpg" target="_blank" rel="noopener"><img src="assets/museum/m13.jpg" alt="Експозиція пам'яті Героїв" loading="lazy"></a>
+          <a class="gallery__item" href="assets/museum/m14.jpg" target="_blank" rel="noopener"><img src="assets/museum/m14.jpg" alt="Музей Небесної Сотні" loading="lazy"></a>
+          <a class="gallery__item" href="assets/museum/m15.jpg" target="_blank" rel="noopener"><img src="assets/museum/m15.jpg" alt="Експозиція музею" loading="lazy"></a>
+          <a class="gallery__item" href="assets/museum/m16.jpg" target="_blank" rel="noopener"><img src="assets/museum/m16.jpg" alt="Стенди музею" loading="lazy"></a>
+          <a class="gallery__item" href="assets/museum/m17.jpg" target="_blank" rel="noopener"><img src="assets/museum/m17.jpg" alt="Музейна експозиція" loading="lazy"></a>
+          <a class="gallery__item" href="assets/museum/m18.jpg" target="_blank" rel="noopener"><img src="assets/museum/m18.jpg" alt="Експозиція пам'яті" loading="lazy"></a>
+          <a class="gallery__item" href="assets/museum/m19.jpg" target="_blank" rel="noopener"><img src="assets/museum/m19.jpg" alt="Музей Героїв Небесної Сотні" loading="lazy"></a>
+          <a class="gallery__item" href="assets/museum/m20.jpg" target="_blank" rel="noopener"><img src="assets/museum/m20.jpg" alt="Стенд із обличчями Героїв Небесної Сотні" loading="lazy"></a>
+          <a class="gallery__item" href="assets/museum/m21.jpg" target="_blank" rel="noopener"><img src="assets/museum/m21.jpg" alt="Експозиція музею" loading="lazy"></a>
+          <a class="gallery__item" href="assets/museum/m22.jpg" target="_blank" rel="noopener"><img src="assets/museum/m22.jpg" alt="Музейні стенди пам'яті" loading="lazy"></a>
+        </div>
+      </div>
+    </section>
+
     <!-- ───────────────── Пам'ять ───────────────── -->
     <section class="section" id="memory" aria-labelledby="memory-title">
       <div class="section__inner narrow">
-        <p class="section__label">05 — Вшанування</p>
+        <p class="section__label">08 — Вшанування</p>
         <h2 class="section__title" id="memory-title">Пам'ять</h2>
         <p>
           Щороку 20 лютого, у День Героїв Небесної Сотні, дрогобичани сходяться на
@@ -273,7 +469,7 @@
     <!-- ───────────────── Джерела ───────────────── -->
     <section class="section section--alt" id="sources" aria-labelledby="sources-title">
       <div class="section__inner narrow">
-        <p class="section__label">06 — Перевірити</p>
+        <p class="section__label">09 — Перевірити</p>
         <h2 class="section__title" id="sources-title">Джерела</h2>
         <p class="section__intro">
           Матеріал спирається на відкриті документальні джерела. Деякі деталі біографій
@@ -299,9 +495,12 @@
       <p class="footer__note">
         Пам'яті дрогобичан, полеглих на Майдані. Богдан Вайда · Йосип Шилінг · Олег Ушневич.
       </p>
-      <a href="#top" class="footer__top">↑ Нагору</a>
+      <a href="#top" class="footer__top js-to-top">↑ Нагору</a>
     </div>
   </footer>
+
+  <!-- Плаваюча кнопка «Нагору» -->
+  <button class="to-top js-to-top" type="button" aria-label="Нагору">↑</button>
 
   <script src="script.js"></script>
 </body>

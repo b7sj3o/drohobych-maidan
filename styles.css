@@ -84,15 +84,17 @@ p:last-child { margin-bottom: 0; }
   margin: 0;
   padding: 0;
   display: flex;
-  gap: 1.6rem;
-  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.15rem;
+  flex-wrap: nowrap;
 }
 
 .nav__list a {
   color: var(--ink-soft);
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   font-weight: 500;
   letter-spacing: 0.01em;
+  white-space: nowrap;
   padding-bottom: 2px;
   border-bottom: 1.5px solid transparent;
   transition: color 0.2s ease, border-color 0.2s ease;
@@ -174,6 +176,94 @@ p:last-child { margin-bottom: 0; }
   color: var(--accent-dark);
   border-bottom-color: var(--accent-dark);
 }
+
+/* Меморіальний ряд героїв на головній */
+.hero__heroes {
+  max-width: var(--maxw);
+  margin: clamp(2.8rem, 6vw, 4rem) auto 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1rem, 3vw, 2rem);
+}
+.hero__hero { margin: 0; text-align: center; }
+.hero__hero img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  background: var(--paper-alt);
+  border: 1px solid var(--line);
+  filter: grayscale(0.15);
+}
+.hero__hero figcaption {
+  margin-top: 0.7rem;
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 0.98rem;
+  color: var(--ink);
+}
+
+/* ============================================================
+   Огляд розділів (головна)
+   ============================================================ */
+.overview__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+.ov-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 140px;
+  padding: 1.2rem 1.3rem;
+  background: var(--paper-alt);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.ov-card:hover {
+  text-decoration: none;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(26, 26, 26, 0.12);
+}
+.ov-card__num {
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+}
+.ov-card__title {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.15rem;
+  line-height: 1.25;
+}
+.ov-card__text {
+  margin-top: 0.35rem;
+  font-size: 0.85rem;
+  color: var(--ink-faint);
+}
+/* картки з фоновим фото */
+.ov-card--photo {
+  min-height: 200px;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  border-color: transparent;
+}
+.ov-card--photo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(20, 28, 38, 0.88) 0%, rgba(20, 28, 38, 0.28) 60%, rgba(20, 28, 38, 0.1) 100%);
+}
+.ov-card--photo > * { position: relative; }
+.ov-card--photo .ov-card__num { color: #fff; opacity: 0.85; }
+.ov-card--photo .ov-card__text { color: rgba(255, 255, 255, 0.82); }
 
 /* ============================================================
    Загальні секції
@@ -372,6 +462,83 @@ p:last-child { margin-bottom: 0; }
 }
 
 /* ============================================================
+   Галерея фото
+   ============================================================ */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 0.9rem;
+}
+.gallery__item {
+  display: block;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  aspect-ratio: 4 / 3;
+}
+.gallery__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.gallery__item:hover { text-decoration: none; }
+.gallery__item:hover img { transform: scale(1.05); }
+
+/* ============================================================
+   Відео-свідчення
+   ============================================================ */
+.videos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.6rem;
+}
+.video { margin: 0; }
+.video video {
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  background: #000;
+  border: 1px solid var(--line);
+  object-fit: contain;
+}
+.video figcaption {
+  margin-top: 0.7rem;
+  font-size: 0.85rem;
+  color: var(--ink-faint);
+  letter-spacing: 0.02em;
+}
+
+/* ============================================================
+   Плаваюча кнопка «Нагору»
+   ============================================================ */
+.to-top {
+  position: fixed;
+  right: clamp(1rem, 3vw, 2rem);
+  bottom: clamp(1rem, 3vw, 2rem);
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 60;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease, background 0.2s ease;
+  box-shadow: 0 6px 18px rgba(26, 26, 26, 0.22);
+}
+.to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+.to-top:hover { background: var(--accent-dark); }
+
+/* ============================================================
    Пам'ять
    ============================================================ */
 .memory__honor {
@@ -452,9 +619,7 @@ p:last-child { margin-bottom: 0; }
 /* ============================================================
    Адаптивність
    ============================================================ */
-@media (max-width: 720px) {
-  body { font-size: 17px; }
-
+@media (max-width: 1024px) {
   .nav__toggle { display: flex; }
 
   .nav__list {
@@ -471,7 +636,7 @@ p:last-child { margin-bottom: 0; }
     overflow: hidden;
     transition: max-height 0.3s ease;
   }
-  .nav__list.is-open { max-height: 420px; }
+  .nav__list.is-open { max-height: 560px; }
   .nav__list li { width: 100%; }
   .nav__list a {
     display: block;
@@ -481,6 +646,14 @@ p:last-child { margin-bottom: 0; }
     font-size: 1rem;
   }
   .nav__list li:first-child a { border-top: none; }
+
+  .hero__heroes { gap: 0.8rem; }
+  .hero__hero figcaption { font-size: 0.82rem; }
+  .videos { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+}
+
+@media (max-width: 460px) {
+  .overview__grid { grid-template-columns: 1fr 1fr; }
 }
 
 /* Повага до налаштувань доступності */
