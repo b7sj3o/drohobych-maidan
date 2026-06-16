@@ -133,9 +133,12 @@ p:last-child { margin-bottom: 0; }
    Hero
    ============================================================ */
 .hero {
-  padding: clamp(4.5rem, 14vw, 9rem) var(--gutter) clamp(3.5rem, 9vw, 6rem);
+  padding: clamp(3rem, 9vw, 5rem) var(--gutter) clamp(2rem, 4vw, 3rem);
   border-bottom: 1px solid var(--line);
 }
+
+/* Огляд розділів одразу під hero */
+.overview { padding-top: clamp(2.2rem, 5vw, 3.2rem); }
 .hero__inner {
   max-width: var(--maxw);
   margin: 0 auto;
